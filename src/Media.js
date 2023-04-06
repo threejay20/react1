@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react"
 import {useParams} from "react-router-dom";
 
+
+
 const x = document.createElement("div")
 const Media = () => {
-    const [media, setMedia] = useState([])
+    const [media, setMedia] = useState(undefined)
+
 //
 //     const [id, setId] = useState([])
     const {id}=useParams()
@@ -18,23 +21,29 @@ const Media = () => {
 
 
 
+
+
     }
 
     useEffect(() => {
         fetchMediaData()
     }, [])
+console.log(media)
+    return media &&(
 
-    return (
-        <div><h1>{media.Name}</h1>
+            <div>
+            <h1>{media.Name}</h1>
             <h2>{media.ShortDesc}</h2>
             <h3>{media.Desc}</h3>
-            <img src={media.Images} alt="image"/>
-            {/*<img src={media.Images[0].Url}/>*/}
+            <h4>{media.genres}</h4>
+            <img src={media.Images[0].Url}/>
             {/*{   */}
             {/*    media.Images.map(image =>*/}
             {/*    <img src={image.Url} alt="none"/>*/}
             {/*)}*/}
-        </div>
-    )}
+        </div>)
+
+
+    }
 
 export default Media;
