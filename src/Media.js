@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import {useParams} from "react-router-dom";
+
 const x = document.createElement("div")
 const Media = () => {
     const [media, setMedia] = useState([])
@@ -24,7 +25,10 @@ const Media = () => {
     }, [])
 
     return (
-        <div><div>{media.Name}</div>
+        <div><h1>{media.Name}</h1>
+            <h2>{media.ShortDesc}</h2>
+            <h3>{media.Desc}</h3>
+            <img src={media.Images} alt="image"/>
             {/*<img src={media.Images[0].Url}/>*/}
             {/*{   */}
             {/*    media.Images.map(image =>*/}
