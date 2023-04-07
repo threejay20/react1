@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 
 
 
+
 const x = document.createElement("div")
 const Media = () => {
     const [media, setMedia] = useState(undefined)
@@ -33,12 +34,13 @@ console.log(media)
     return media &&(
 
             <div>
-            <h1>{media.Name}</h1>
-            <h2>{media.ShortDesc}</h2>
-            <h3>{media.Desc}</h3>
-            <h4>{media.genres}</h4>
+            <h1 className="Name">{media.Name}</h1>
+            <h2 className="ShortDesc">{media.ShortDesc}</h2>
+            <h3 className="Desc">{media.Desc}</h3>
+            <h4 className="Genres">{media.genres}</h4>
                 {
                     media.Images.length !==0 ?<img src={media.Images[0].Url}/> : <h5>img</h5>
+
                 }
             {/*<img src={media.Images[0].Url}/>*/}
             {/*{   */}

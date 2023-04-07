@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import {useParams} from "react-router-dom";
+import "./List.css"
 
 
 
@@ -27,7 +28,8 @@ console.log("data"+data)
                 {
                     list.Items.map(file =>
                         <div class="media container">
-                            <a href={`/getmovies/${file.Id}`}>{file.Name}</a>
+                            <a className="link" href={`/getmovies/${file.Id}`}>{file.Name}</a>
+
                         </div>
                     )
                 }
