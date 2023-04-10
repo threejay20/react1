@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import {useParams} from "react-router-dom";
+import "./Media.css";
 
 
 
@@ -39,7 +40,7 @@ console.log(media)
             <h3 className="Desc">{media.Desc}</h3>
             <h4 className="Genres">{media.genres}</h4>
                 {
-                    media.Images.length !==0 ?<img src={media.Images[0].Url}/> : <h5>img</h5>
+                    media.Images.length !==0 ?<img src={media.Images[0].Url}/> : <h5>No Image Available</h5>
 
                 }
             {/*<img src={media.Images[0].Url}/>*/}
